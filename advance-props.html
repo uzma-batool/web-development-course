@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance CSS Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8fafc;
+            gap: 20px;
+        }
+        .advance-card {
+            background-color: #10b981;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0.9;
+            
+            /* Smooth transitions */
+            transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+        }
+        
+        /* Hover Effect: Mouse le jaane par kya hoga */
+        .advance-card:hover {
+            opacity: 1;
+            background-color: #059669;
+            transform: scale(1.1) rotate(2deg); /* Box thoda bada aur teerha ho jayega */
+        }
+
+        .page-image {
+            max-width: 250px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .page-image:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="img.png" alt="Local image" class="page-image">
+    <div class="advance-card">
+        <h3>Advance Box</h3>
+        <p>hello friends this is an advance box. Hover over this card to see effects! </p>
+    </div>
+</body>
+</html>
