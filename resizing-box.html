@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizing Box Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .heading-title {
+            text-align: center;
+            color: #334155;
+        }
+
+        /* Yeh hai humara main resizing box */
+        .my-resizable-box {
+            background-color: #3b82f6; /* Blue color */
+            color: white;
+            padding: 30px;
+            margin: 40px auto;
+            border: 6px solid #1d4ed8;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+            /* 🌟 RESIZING KI MAIN PROPERTIES 🌟 */
+            box-sizing: border-box; /* Sabse important: border aur padding se size kharab nahi hoga */
+            width: 80%;             /* Laptop screen par yeh 80% jagah gherega */
+            max-width: 500px;       /* Lekin laptop jitna bhi bada ho, box 500px se zyada lamba nahi hoga */
+            min-width: 280px;       /* Aur mobile par yeh 280px se chota nahi hoga */
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="heading-title">CSS Box Resizing Practice</h2>
+
+    <div class="my-resizable-box">
+        <h3>This is a Flexible Box!</h3>
+        <p>hello friends this is a resizable box !</p>
+        
+    </div>
+
+</body>
+</html>
