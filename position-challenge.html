@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge #4: Positions</title>
+    <style>
+        /* Base page reset */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc; /* Bohat clean, halka sa gray background */
+            color: #334155;
+        }
+
+        /* 1. Main Header Banner (Pink ki jagah Royal Navy Blue Gradient) */
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #0f172a); 
+            color: white;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* 2. Sticky Navigation Bar (Black ki jagah Beautiful Deep Teal) */
+        .navbar {
+            background-color: #0d9488; /* Premium Teal Color */
+            padding: 15px 0;
+            text-align: center; /* Links ko center mein align kiya, video se alag */
+            
+            /* ---- Challenge Core: Element top par automatic stick ho jaye ---- */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Links styling */
+        .navbar a {
+            color: #ccfbf1;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover karne par color smooth change hoga */
+        .navbar a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.5);
+        }
+
+        /* 3. Main Content Layout */
+        .content-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Product sections ko modern card style de diya */
+        .section {
+            background-color: #ffffff;
+            padding: 35px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Mouse upar le jaane se card thoda sa lift hoga */
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: #0d9488;
+        }
+
+        .section h2 {
+            color: #0f172a;
+            margin-top: 0;
+            font-size: 2rem;
+            border-bottom: 3px solid #f1f5f9;
+            padding-bottom: 12px;
+        }
+
+        .section p {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Products
+    </div>
+
+    <div class="navbar">
+        <a href="#hoses">Hoses</a>
+        <a href="#rakes">Rakes</a>
+        <a href="#shovels">Shovels</a>
+    </div>
+
+    <div class="content-container">
+        
+        <div id="hoses" class="section">
+            <h2>Hoses</h2>
+            <p>
+                Bacon ipsum dolor amet frankfurter pork loin picanha short ribs. T-bone burgdoggen fatback chuck cow, jerky drumstick pork tongue pastrami strip steak pig ball tip. Swine ribeye beef ribs ham, pig venison jowl ball tip pork chop fatback flank biltong tenderloin brisket. Pig sausage landjaeger shankle, cow pork belly biltong shank.
+            </p>
+        </div>
+
+        <div id="rakes" class="section">
+            <h2>Rakes</h2>
+            <p>
+                Shank drumstick ground round tail bacon tongue chicken ball tip t-bone strip steak jowl short ribs layout. Cow pork belly pancetta turducken, short ribs capicola swine flank jowl beef tail ball tip tenderloin shoulder. Pastrami strip steak tail corned beef pig jowl jowl meatball meatloaf spare ribs frankfurter bresaola.
+            </p>
+        </div>
+
+        <div id="shovels" class="section">
+            <h2>Shovels</h2>
+            <p>
+                Sausage landjaeger tail swine capicola chop. Beef meatball pork drumstick cow picanha biltong ribeye. Jowl chuck tongue jerky meatloaf short loin spare ribs pork tail ball tip ground round ham corned beef pork belly biltong flank.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
