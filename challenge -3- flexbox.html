@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox-3 Challenge</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: darkblue;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+    }
+
+    nav {
+      background-color: #d9c0e8;
+      width: 20%;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav ul li a:hover {
+      color: #ff004c;
+    }
+
+    article {
+      background-color: #5f61d006;
+      flex: 1;
+      padding: 25px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #064e3b;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    welcome to my website
+  </header>
+
+  <main>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h2>About This Page</h2>
+      <p>
+        This webpage layout is created using CSS Flexbox. Flexbox helps in arranging elements easily in rows and columns without using float or positioning.
+      </p>
+      <p>
+        The navigation bar is on the left, the header is at the top, and the footer stays at the bottom. The article section is used to display the main content of the page.
+      </p>
+      <p>
+        You can use this layout as a base for any website — just change colors, add images, and include more sections as needed.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    © 2026 My Website | Designed by Uzma Batool
+  </footer>
+</body>
+</html>
