@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Flexbox Playground 🎮</title>
+    <style>
+        /* --- General Setup --- */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        h1 { color: #1e3a8a; margin-bottom: 5px; }
+        .info { color: #64748b; margin-bottom: 25px; }
+
+        /* 🎛️ CONTROLLER PANEL (Buttons Layout) */
+        .controls {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:hover { background-color: #1d4ed8; transform: translateY(-2px); }
+        button.active { background-color: #10b981; } /* Green color for activated grow */
+
+        /* ======================================================= */
+        /* 👑 1. PARENT CONTAINER (Dynamic Movement)                */
+        /* ======================================================= */
+        .flex-parent {
+            background-color: #ffffff;
+            border: 3px dashed #cbd5e1;
+            border-radius: 16px;
+            padding: 25px;
+            min-height: 400px; 
+            max-width: 850px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease; /* Is se movement smooth animation ke sath hogi */
+
+            /* Core Flexbox Settings */
+            display: flex;
+            flex-direction: row;        /* Initial state row */
+            justify-content: flex-start; /* Initial state left */
+            align-items: center;
+        }
+
+        /* ======================================================= */
+        /* 📦 2. CHILDREN BOXES (Dynamic Sizes)                    */
+        /* ======================================================= */
+        .child-box {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            transition: all 0.4s ease; /* Is se size chota-bada boht smoothly hoga */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Bright Gradient Colors */
+        .box-1 { background: linear-gradient(135deg, #f43f5e, #be123c); } /* Red */
+        .box-2 { background: linear-gradient(135deg, #0ea5e9, #0369a1); } /* Blue */
+        .box-3 { background: linear-gradient(135deg, #10b981, #047857); } /* Green */
+        .box-4 { background: linear-gradient(135deg, #a855f7, #7e22ce); } /* Purple */
+
+        /* 🌟 Class for Grow Action (Jab Box bada hoga) */
+        .grow-active {
+            flex-grow: 1; /* Bachi hui poori space gher lega */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Flexbox Playground 🎮</h1>
+    <p class="info">Click the buttons below to move the layout and change box sizes dynamically!</p>
+
+    <div class="controls">
+        <button onclick="changeDirection('row')">↔️ Row (Horizontal)</button>
+        <button onclick="changeDirection('column')">↕️ Column (Vertical)</button>
+        <button onclick="changeJustify('flex-start')">⬅️ Move Left / Top</button>
+        <button onclick="changeJustify('center')">🎯 Move Center</button>
+        <button onclick="changeJustify('flex-end')">➡️ Move Right / Bottom</button>
+        <button id="growBtn" onclick="toggleGrow()">⚖️ Make Box 2 BIG / Small</button>
+    </div>
+
+    <div class="flex-parent" id="parentContainer">
+        <div class="child-box box-1">Box 1</div>
+        <div class="child-box box-2" id="boxTwo">Box 2</div>
+        <div class="child-box box-3">Box 3</div>
+        <div class="child-box box-4">Box 4</div>
+    </div>
+
+    <script>
+        const container = document.getElementById('parentContainer');
+        const boxTwo = document.getElementById('boxTwo');
+        const growBtn = document.getElementById('growBtn');
+
+        // Direction Badalne ke liye (Row ya Column)
+        function changeDirection(dir) {
+            container.style.flexDirection = dir;
+            // Column mein smoothly right side shift handle karne ke liye adjustment
+            if (dir === 'column') {
+                container.style.alignItems = container.style.justifyContent === 'flex-end' ? 'flex-end' : (container.style.justifyContent === 'center' ? 'center' : 'flex-start');
+            } else {
+                container.style.alignItems = 'center';
+            }
+        }
+
+        // Position Move karne ke liye (Left, Center, Right)
+        function changeJustify(pos) {
+            container.style.justifyContent = pos;
+            if (container.style.flexDirection === 'column') {
+                container.style.alignItems = pos;
+            }
+        }
+
+        // Box 2 ko Chota-Bada karne ke liye (flex-grow toggler)
+        function toggleGrow() {
+            boxTwo.classList.toggle('grow-active');
+            growBtn.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
