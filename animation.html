@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        .a{
+            animation: move 2s infinite alternate, bouncing 0.5s infinite alternate;
+            
+            background-color: blue;
+            border-radius: 50%;
+            display: inline-block;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            padding: 1em 2em;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            vertical-align: top;
+            margin-top: 100px;
+ }       .a:hover{
+            background-color: red;
+            box-shadow: 0 0 10px red, 0 0 40px red, 0 0 80px red;
+        }
+        @keyframes move{
+            from{
+                transform: translateX(0);
+                background-color: red;
+            }
+            to
+            {
+                transform: translateX(200px);
+                background-color: blue;
+            }
+
+
+        }
+        @keyframes bouncing{
+            0%{
+                bottom: 0;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+            }
+            100%{
+                bottom: 50px;
+                box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.1);
+
+            }
+        }
+    </style>
+
+
+</body>
+<body>
+    <a class="a"> loading</a>
+</body>
+</html>
