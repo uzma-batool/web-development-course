@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays in JavaScript</title>
+</head>
+<body>
+
+    <h1>Arrays Demo</h1>
+    <p>Check the Console (F12) for output.</p>
+
+    <script>
+        // 1. Array Creation
+        let fruits = ["Apple", "Banana", "Mango"];
+        console.log("Original Array:", fruits);
+
+        // 2. Accessing Elements (Index 0 se shuru hota hai)
+        console.log("First fruit:", fruits[0]); // Apple
+
+        // 3. Array Methods
+        // Push: Aakhir mein add karna
+        fruits.push("Orange");
+        console.log("After Push:", fruits);
+
+        // Pop: Aakhir se remove karna
+        fruits.pop();
+        console.log("After Pop:", fruits);
+
+        // Unshift: Shuru mein add karna
+        fruits.unshift("Grapes");
+        console.log("After Unshift:", fruits);
+
+        // Shift: Shuru se remove karna
+        fruits.shift();
+        console.log("After Shift:", fruits);
+
+        // 4. Array Length
+        console.log("Array Length:", fruits.length);
+
+        // 5. Array Iteration (Looping through Array)
+        console.log("Printing all fruits:");
+        for(let i = 0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+
+        // 6. Converting Array to String
+        console.log("Array to String:", fruits.join(" - "));
+    </script>
+
+</body>
+</html>
