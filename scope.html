@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Scope in JavaScript</h1>
+    <script>
+        // GLOBAL SCOPE
+        let globalVar = "Main Global hoon";
+
+        function testScope() {
+            // FUNCTION SCOPE
+            let functionVar = "Main sirf function ke andar hoon";
+            console.log(globalVar);    // Chalega (Global hai)
+            console.log(functionVar);  // Chalega (Function ke andar hai)
+        }
+
+        testScope();
+        
+        // console.log(functionVar); // ERROR! kyunki ye function ke bahar hai.
+
+        // BLOCK SCOPE
+        if (true) {
+            let blockVar = "Main sirf is if-block ke andar hoon";
+            var oldVar = "Main Block se bahar bhi mil jaunga!"; // var block scope nahi manta
+            console.log(blockVar); // Chalega
+        }
+
+        console.log(oldVar);   // Chalega (kyunki 'var' global ho jata hai)
+        // console.log(blockVar); // ERROR! kyunki blockVar sirf 'if' ke andar tha.
+
+    </script>
+</body>
+</html>
