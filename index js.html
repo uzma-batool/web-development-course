@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>How Code Executes in JS</h1>
+    <script>
+        // --- 1. Memory Creation Phase ---
+        // Engine yahan aakar 'n' ko undefined aur 'square' function ko memory mein store kar leta hai.
+
+        var n = 5;
+
+        function square(num) {
+            var ans = num * num;
+            return ans;
+        }
+
+        // --- 2. Code Execution Phase ---
+        // Yahan se asli logic chalta hai
+        
+        var square1 = square(n);
+        var square2 = square(10);
+
+        console.log("Square of 5 is: " + square1);
+        console.log("Square of 10 is: " + square2);
+
+        /* Logic Summary:
+           - Jab function 'square' call hota hai, toh ek naya 'Execution Context' banta hai.
+           - Function ka kaam khatam hote hi, woh 'Call Stack' se bahar nikal jata hai.
+        */
+    </script>
+</body>
+</html>
