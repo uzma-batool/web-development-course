@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1 id="main-heading">Hello World</h1>
+    <button id="change-btn">Click Me!</button>
+
+    <script>
+        // Select elements
+        let heading = document.querySelector("#main-heading");
+        let btn = document.querySelector("#change-btn");
+
+        // Event Listener (Click handle karna)
+        btn.addEventListener("click", () => {
+            heading.innerText = "DOM Manipulation Seekh Liya!";
+            heading.style.color = "blue";
+            console.log("Heading badal gayi!");
+        });
+    </script>
+
+</body>
+</html>
