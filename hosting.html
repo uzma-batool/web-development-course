@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>JavaScript Hosting Demo</h1>
+    <script>
+        // --- 1. Function Hosting (Works perfectly) ---
+        greet(); // Yeh line chal jayegi, kyunki function pura upar move ho jata hai.
+
+        function greet() {
+            console.log("Hello! Main function hosting ki wajah se pehle call ho gaya.");
+        }
+
+        // --- 2. Variable Hosting (Behaves differently) ---
+        console.log(myNumber); // Output: undefined (Error nahi aayega, lekin value nahi hogi)
+        
+        var myNumber = 100; // Declaration upar chala gaya, lekin assignment niche hai.
+
+        // --- 3. Let & Const (Hosting with Temporal Dead Zone) ---
+        // console.log(a); // ERROR aayega! ReferenceError.
+        let a = 20; 
+        /* Kyunki 'let' aur 'const' bhi host hote hain, lekin woh 'Temporal Dead Zone' 
+           mein hote hain, jiska matlab hai ki aap unhein tab tak use nahi kar sakti 
+           jab tak code us line tak na pahunch jaye.
+        */
+    </script>
+</body>
+</html>
