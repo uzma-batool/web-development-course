@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CRUD App</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { padding: 10px; width: 200px; }
+        button { padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>My To-Do CRUD App</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task...">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        // 1. CREATE: Task add karna
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let list = document.getElementById("taskList");
+            
+            if (input.value === "") return;
+
+            let li = document.createElement("li");
+            li.innerHTML = input.value + ' <button onclick="deleteTask(this)">Delete</button>';
+            
+            // 2. READ: Task list mein dikhana
+            list.appendChild(li);
+            input.value = "";
+        }
+
+        // 3. DELETE: Task hatana
+        function deleteTask(btn) {
+            btn.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
